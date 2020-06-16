@@ -1,4 +1,4 @@
-# Project structure
+## Project structure
 
 ```
 Morphology_Study
@@ -8,8 +8,12 @@ Morphology_Study
 |
 +---dataset
 |   +---captcha
-|   \---finger
+|   \---hand
 \---output
     +---captcha
-    \---finger
+    \---hand
 ```
+
+[Captcha source link](https://www.kaggle.com/fournierp/captcha-version-2-images)
+
+[Hand source link](https://www.kaggle.com/koryakinp/fingers)
