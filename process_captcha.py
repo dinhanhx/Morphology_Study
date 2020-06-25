@@ -26,8 +26,8 @@ def plot_img_list(img_list, figure_name = None, save_me = False, show_me = True)
 folder_path = 'dataset/captcha/'
 fpath_list = [folder_path+str(i)+'.jpg' for i in range(10)]
 kernel = np.ones((3,3), np.uint8)
-transformation_list = [cv2.MORPH_OPEN, cv2.MORPH_CLOSE, cv2.MORPH_GRADIENT, cv2.MORPH_TOPHAT, cv2.MORPH_BLACKHAT]
-figure_name_list = ['output/captcha/' + ele + '.jpg' for ele in ['open', 'close', 'gradient', 'white top hat', 'black top hat']]
+transformation_list = [cv2.MORPH_TOPHAT, cv2.MORPH_BLACKHAT]
+figure_name_list = ['output/captcha/' + ele + '.jpg' for ele in ['white top hat', 'black top hat']]
 
 # Get grayscale images as a list
 img_list = [cv2.imread(fpath, 0) for fpath in fpath_list]
