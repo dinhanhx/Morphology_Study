@@ -26,7 +26,7 @@ def plot_img_list(img_list, figure_name = None, show_me = True):
 folder_path = 'dataset/captcha/'
 fpath_list = [folder_path+str(i)+'.jpg' for i in range(10)]
 transformation_list = [cv2.MORPH_TOPHAT, cv2.MORPH_BLACKHAT]
-figure_name_list = ['output/captcha/' + ele + '.jpg' for ele in ['top hat', 'black hat']]
+figure_name_list = ['output/captcha/' + ele + '.png' for ele in ['top hat', 'black hat']]
 kernel = np.ones((3,3), np.uint8)
 
 # Get grayscale images as a list
@@ -35,7 +35,7 @@ img_list = [cv2.imread(fpath, 0) for fpath in fpath_list]
 # Convert them to binary images
 bin_img_list = [cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)[1] for img in img_list]
 
-plot_img_list(bin_img_list, figure_name = 'dataset/captcha/original.jpg', show_me = False)
+plot_img_list(bin_img_list, figure_name = 'dataset/captcha/original.png', show_me = False)
 
 # Apply morphological transformations to them
 # And save them
