@@ -1,5 +1,4 @@
 # Copyright (C) 2020  Ngô Ngọc Đức Huy
-from sys import argv
 from cv2 import (
     imread,
     cvtColor, COLOR_BGR2GRAY,
@@ -28,7 +27,7 @@ def gradient(image, kernel):
 
 
 if __name__ == "__main__":
-    img = imread(argv[1])
+    img = imread('dataset/left-hand.png')
     img = to_gray(img, 100)
     plt.subplot(2, 3, 1)
     plt.imshow(img, cmap='gray')
