@@ -16,5 +16,5 @@ img_dilation = cv2.dilate(img, kernel, iterations=1)
 # cv2.imshow('Eroded',img_erosion)
 # cv2.imshow('Dilated',img_dilation)
 
-cv2.imwrite('output/captcha/eroded.jpg', img_erosion)
-cv2.imwrite('output/captcha/dilated.jpg', img_dilation)
+cv2.imwrite('output/captcha-eroded.jpg', img_erosion)
+cv2.imwrite('output/captcha-dilated.jpg', img_dilation)
