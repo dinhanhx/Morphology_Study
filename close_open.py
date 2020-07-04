@@ -2,15 +2,11 @@ import cv2
 import numpy as np
 from utils import url_2_img
 
-url_1 = 'https://i.stack.imgur.com/8txbX.png'
-# https://graphicdesign.stackexchange.com/a/20478
-# CC BY-SA 3.0
-
-url_2 = 'http://baochi.nlv.gov.vn/baochi/cgi-bin/imageserver/imageserver.pl?oid=Hueo19400701.2.3&area=1&width=700&color=all&ext=jpg&key='
+url = 'http://baochi.nlv.gov.vn/baochi/cgi-bin/imageserver/imageserver.pl?oid=Hueo19400701.2.3&area=1&width=700&color=all&ext=jpg&key='
 # Bao chi gov vietnam
 # Public domain
 
-img = url_2_img(url_2)
+img = url_2_img(url)
 cv2.imwrite('dataset/title.jpg', img)
 img = cv2.threshold(img, 141, 255, cv2.THRESH_BINARY_INV)[1]
 
