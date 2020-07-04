@@ -38,7 +38,7 @@ def hit_miss(image, kernel):
 
 
 if __name__ == "__main__":
-    img = imread('dataset/captcha/1.jpg')
+    img = imread('dataset/captcha.jpg')
     img = to_binary(img, 100)
     plt.subplot(5, 3, 2)
     plt.imshow(img, cmap='gray')
