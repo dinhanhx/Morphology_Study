@@ -5,13 +5,19 @@ from cv2 import (
     threshold, THRESH_BINARY,
     morphologyEx, MORPH_GRADIENT
 )
-from numpy import ones, uint8
+from numpy import ones, uint8, array
 import matplotlib.pyplot as plt
 
-kernel_list = [
-    ones((3, 3), uint8),
-    ones((5, 5), uint8)
-]
+kernel_list = {
+    '3x3 square': ones((3, 3), uint8),
+    '5x5 square': ones((5, 5), uint8),
+    '3x3 cross': array([[0, 1, 0], [1, 1, 1], [0, 1, 0]], uint8),
+    '5x5 cross': array([[0, 0, 1, 0, 0],
+                        [0, 0, 1, 0, 0],
+                        [1, 1, 1, 1, 1],
+                        [0, 0, 1, 0, 0],
+                        [0, 0, 1, 0, 0]], uint8)
+}
 
 
 def to_gray(image, thr):
@@ -29,17 +35,21 @@ def gradient(image, kernel):
 if __name__ == "__main__":
     img = imread('dataset/left-hand.png')
     img = to_gray(img, 100)
-    plt.subplot(2, 3, 1)
+    plt.subplot(3, 4, 1)
+    plt.title('Original')
     plt.imshow(img, cmap='gray')
-    i = 2
+    i = 5
 
     for kernel in kernel_list:
-        res = gradient(img, kernel)
-        plt.subplot(2, 3, i)
+        plt.subplot(3, 4, i)
         i += 1
+        res = gradient(img, kernel_list[kernel])
+        plt.title(kernel)
         plt.imshow(res, cmap='gray')
-        plt.subplot(2, 3, i)
-        res = threshold(res, 80, 255, THRESH_BINARY)[1]
+
+        plt.subplot(3, 4, i)
         i += 1
+        res = threshold(res, 80, 255, THRESH_BINARY)[1]
+        plt.title(f'{kernel}, thresholded')
         plt.imshow(res, cmap='gray')
     plt.show()
