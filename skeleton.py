@@ -30,9 +30,12 @@ def skeleton(filename):
     return skel
 
 
-for i in range(10):
-    skel = skeleton(f'dataset/hand/{i}.png')
-    plt.subplot(4, 3, i + 1)
-    plt.imshow(skel, cmap='gray')
+img = imread('dataset/hand.png')
+plt.subplot(211)
+plt.imshow(img, cmap='gray')
+
+skel = skeleton('dataset/hand.png')
+plt.subplot(212)
+plt.imshow(skel, cmap='gray')
 
 plt.show()
