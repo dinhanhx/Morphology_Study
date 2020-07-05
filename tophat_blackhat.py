@@ -20,5 +20,5 @@ img_blackhat = cv2.morphologyEx(img, cv2.MORPH_BLACKHAT, kernel)
 # cv2.imshow('Blackhat', img_blackhat)
 # cv2.waitKey(0)
 
-cv2.imwrite('output/cancer-vs-normal-call-close.jpg', img_tophat)
-cv2.imwrite('output/cancer-vs-normal-call-open.jpg', img_blackhat)
+cv2.imwrite('output/cancer-vs-normal-call-tophat.jpg', img_tophat)
+cv2.imwrite('output/cancer-vs-normal-call-blackhat.jpg', img_blackhat)
