@@ -30,7 +30,7 @@ def skeleton(img):
     return skel
 
 
-img = imread('dataset/right-hand.png', 0)
+img = imread('dataset/fingerprint.jpg', 0)
 plt.subplot(221)
 plt.title('Original image')
 plt.imshow(img, cmap='gray')
